@@ -190,7 +190,7 @@ window.addEventListener('scroll', function(){
 });
 const photoSecUlLiA = document.querySelectorAll('section.gallery-sec .inner ul li a');
 photoSecUlLiA.forEach((el, idx)=>{
-  el.style.background = `url('../../img/gallery-sec/gallery${idx}.jpeg') no-repeat center / cover`;
+  el.style.background = `url('img/gallery-sec/gallery${idx}.jpeg') no-repeat center / cover`;
 });
 //player section
 const playerSliderUl = document.querySelector('section.player-sec .slider-inner ul');
