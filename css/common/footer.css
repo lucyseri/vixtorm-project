@@ -1,0 +1,118 @@
+footer{
+  background-color: var(--gray2-color);
+}
+footer .footer-nav{
+  border-bottom: 1px solid var(--gray5-color);
+}
+footer .footer-nav .inner ul{
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer-nav .inner ul li a{
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 22px;
+  padding: 12px 0;
+}
+footer .site-info .inner{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+footer .site-info .inner .team-info{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+footer .site-info .inner .team-info a.footer-logo{
+  flex: 0 0 204px;
+}
+footer .site-info .inner .team-info a.footer-logo img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+footer .site-info .inner .team-info address{
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 22px;
+  font-style: normal;
+}
+footer .site-info .inner .family-site{
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+footer .site-info .inner .family-site ul.sns-icon{
+  flex: 0 0 auto;
+  display: flex;
+  gap: 10px;
+}
+footer .site-info .inner .family-site ul.sns-icon li{
+  flex: 0 0 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+footer .site-info .inner .family-site ul.sns-icon li a{
+  width: 100%;
+  height: inherit;
+  background-image: url('../../img/sns-icons.svg');
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+footer .site-info .inner .family-site ul.sns-icon li:first-child a{
+  background-position: left top;
+}
+footer .site-info .inner .family-site ul.sns-icon li:last-child a{
+  background-position: right top;
+}
+footer .site-info .inner .family-site .select{
+  flex: 0 0 220px;
+  height: 40px;
+  position: relative;
+  border-bottom: 1px solid var(--gray7-color);
+}
+footer .site-info .inner .family-site .select span.default{
+  display: block;
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 500;
+  line-height: 39px;
+  padding: 0 8px;
+}
+footer .site-info .inner .family-site .select span.default span.more-arrow{
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-image: url('../../img/select-arrow-down.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  float: right;
+  margin-top: 9.5px;
+}
+footer .site-info .inner .family-site .select.active span.default span.more-arrow{
+  background-image: url('../../img/select-arrow-up.svg');
+}
+footer .site-info .inner .family-site .select ul{
+  width: 100%;
+  height: 160px;
+  overflow-y: scroll;
+  position: absolute;
+  top: -160px;
+  left: 0;
+  background-color: var(--gray1-color);
+  display: none;
+}
+footer .site-info .inner .family-site .select.active ul{
+  display: block;
+}
+footer .site-info .inner .family-site .select ul li a{
+  width: 100%;
+  font-size: 0.7rem;
+  font-weight: 400;
+  line-height: 40px;
+  padding: 0 8px;
+}
+footer .site-info .inner .family-site .select ul li a:hover{
+  background-color: var(--gray2-color);
+}

@@ -1,0 +1,126 @@
+<header>
+  <div class="inner">
+    <h1 class="logo"><a href="index.html"><img src="img/vixtorm_logo.svg" alt="로고"></a></h1>
+    <nav>
+      <ul class="depth1">
+        <li>
+          <a href="#">구단소개</a>
+          <ul class="depth2">
+            <li><a href="#">구단연혁</a></li>
+            <li><a href="#">엠블럼</a></li>
+            <li><a href="#">조직도</a></li>
+            <li><a href="#">홈코트</a></li>
+            <li><a href="#">스폰서</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">선수단</a>
+          <ul class="depth2">
+            <li><a href="#">선수단</a></li>
+            <li><a href="#">코칭스텝</a></li>
+            <li><a href="#">응원단</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">경기안내</a>
+          <ul class="depth2">
+            <li><a href="#">경기일정결과</a></li>
+            <li><a href="#">경기기록실</a></li>
+            <li><a href="#">팀종합순위</a></li>
+            <li><a href="#">티켓예매</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">응원하기</a>
+          <ul class="depth2">
+            <li><a href="#">포토갤러리</a></li>
+            <li><a href="#">응원가</a></li>
+            <li><a href="#">이벤트</a></li>
+            <li><a href="#">구단문의사항</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">구단소식</a>
+          <ul class="depth2">
+            <li><a href="#">언론</a></li>
+            <li><a href="#">공지사항</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div class="goto">
+      <ul>
+        <li class="goto-login"><a href="#">로그인</a></li>
+        <span class="bar"></span>
+        <li class="goto-join"><a href="#">회원가입</a></li>
+        <span class="bar"></span>
+        <li><a href="#">KOVO스토어</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="login-popup">
+    <div class="login-inner">
+      <span class="close-btn"><span class="ir_wa">닫기</span></span>
+      <form action="#" method="get" id="login-form">
+        <div class="input-box">
+          <label for="login-email">이메일 주소</label>
+          <input type="email" id="login-email" name="login-email" autocomplete="off">
+        </div>
+        <div class="input-box">
+          <label for="login-pw">비밀번호</label>
+          <input type="password" id="login-pw" name="login-pw" autocomplete="off">
+        </div>
+        <button>로그인</button>
+      </form>
+      <ul class="options">
+        <li class="login-state"><span class="check-btn"></span>로그인 상태 유지</li>
+        <li class="find-pw"><a href="#">비밀번호 찾기</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="join-popup">
+    <div class="join-inner">
+      <span class="close-btn"><span class="ir_wa">닫기</span></span>
+      <form action="#" method="get" id="join-form">
+        <div class="input-box">
+          <label for="join-name">이름</label>
+          <span>
+            <input type="text" name="join-name" id="join-name">
+          </span>
+        </div>
+        <div class="input-box">
+          <label for="join-phon">전화번호</label>
+          <span class="select-box">
+            <select name="join-mobile-carrier" id="join-mobile-carrier" required>
+              <option value="skt">skt</option>
+              <option value="kt">kt</option>
+              <option value="lgu">LGU+</option>
+            </select>
+            <span>
+              <input type="text" id="join-phon" name="join-phon" minlength="11" maxlength="11" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="공백 없이 숫자만 입력">
+            </span>
+          </span>
+        </div>
+        <div class="input-box">
+          <label for="join-email">이메일</label>
+          <span>
+            <input type="email" id="join-email" name="join-email">
+          </span>
+        </div>
+        <div class="input-box">
+          <label for="join-pw1">비밀번호</label>
+          <span>
+            <input type="password" name="join-pw1" id="join-pw1" autocomplete="off">
+          </span>
+        </div>
+        <div class="input-box">
+          <label for="join-pw2">비밀번호 확인</label>
+          <span>
+            <input type="password" name="join-pw2" id="join-pw2" autocomplete="off">
+          </span>
+        </div>
+        <button>회원가입</button>
+      </form>
+    </div>
+  </div>
+</header>

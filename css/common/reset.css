@@ -1,0 +1,113 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap');
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/pretendard@1.0/Pretendard-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+:root{
+  --main-color: #ED1C24;
+  --secondary-color: #FAA61A;
+  --tertiary-color: #CDC2AF;
+  --back-color: #FAFAFA;
+  --txt1-color: #030303;
+  --txt2-color: #5C5C5C;
+  --txt3-color: #B5B5B5;
+  --gray1-color: #F7F6F4;
+  --gray2-color: #EFEEED;
+  --gray3-color: #E4E2DE;
+  --gray4-color: #D8D6D3;
+  --gray5-color: #AFADAA;
+  --gray6-color: #7E7A73;
+  --gray7-color: #55524B;
+  --gray8-color: #2C2A26;
+  --gray9-color: #171511;
+  --title-font: "IBM Plex Sans KR", sans-serif;
+  --body-font: 'Pretendard';
+}
+/* reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--txt1-color);
+  font-family: var(--body-font);
+}
+html{
+  font-size: 20px;
+}
+a{
+  display: block;
+  text-decoration: none;
+}
+ul, li{
+  list-style: none;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: var(--title-font);
+}
+h2{
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 48px;
+  letter-spacing: 0.25px;
+}
+#wrap{
+  width: 100%;
+  min-width: 1440px;
+  height: auto;
+}
+/* ir */
+.ir_pm{
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+.ir_wa{
+  display: block;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+.ir_su{
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -99999px;
+}
+/* layout */
+.inner{
+  width: 1280px;
+  margin: 0 auto;
+}
