@@ -4,13 +4,13 @@ $('#header-include').load("html/header.html", function(){
     $('.login-popup').addClass('active');
     return false;
   });
-  $('.login-popup span.close-btn').click(function(){
+  $('.login-popup button.close-btn').click(function(){
     $('.login-popup').removeClass('active');
   });
   $('.login-popup ul.options li.login-state').click(function(){
     $(this).toggleClass('active');
   });
-  $('.login-popup button').click(function(){
+  $('.login-popup button.submit').click(function(){
     var loginId = document.querySelector('#login-email');
     var loginPw = document.querySelector('#login-pw');
     if(loginId.value === ''){
@@ -31,7 +31,7 @@ $('#header-include').load("html/header.html", function(){
     $('.join-popup').addClass('active');
     return false;
   });
-  $('.join-popup span.close-btn').click(function(){
+  $('.join-popup button.close-btn').click(function(){
     $('.join-popup').removeClass('active');
   });
   $('span.select-box select').click(function(){
@@ -42,7 +42,7 @@ $('#header-include').load("html/header.html", function(){
   $(document).click(function(e){
     if(!$(e.target).is($('span.select-box select'))) $('span.select-box select').removeClass('active');
   });
-  $('.join-popup button').click(function(){
+  $('.join-popup button.submit').click(function(){
     if($('#join-name').val() === ''){
       alert('이름을 입력해주세요');
       $('#join-name').focus();

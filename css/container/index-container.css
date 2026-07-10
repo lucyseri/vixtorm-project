@@ -107,7 +107,10 @@ main section h2 a{
 main section h2 a:hover{
   background-position: left bottom;
 }
-span.arrow{
+button.arrow{
+  border: 0;
+  padding: 0;
+  cursor: pointer;
   display: block;
   width: 40px;
   height: 40px;
@@ -115,13 +118,12 @@ span.arrow{
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
 }
-span.right-arrow{
+button.right-arrow{
   transform: translateY(-50%) scaleX(-1);
   right: -80px;
 }
-span.left-arrow{
+button.left-arrow{
   left: -80px;
 }
 /* section - game */

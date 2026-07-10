@@ -84,8 +84,8 @@ const spanAwayName = document.querySelectorAll('.game-sec .away span.name');
 const spanAwayScore = document.querySelectorAll('.game-sec .away span.score');
 const gameLeftBtn = document.querySelectorAll('.game-sec a.left-btn');
 const gameRightBtn = document.querySelectorAll('.game-sec a.right-btn');
-const gameCarouselArrowRight = document.querySelector('.carousel span.right-arrow');
-const gameCarouselArrowLeft = document.querySelector('.carousel span.left-arrow');
+const gameCarouselArrowRight = document.querySelector('.carousel button.right-arrow');
+const gameCarouselArrowLeft = document.querySelector('.carousel button.left-arrow');
 const gameSchedule = [
   {round: '1 ROUND', homeEmblem: 'kc', home: '한국전력', time: '2025.10.20(월) 19:00', place: '수원체육관', homeScore: '0', away: '우리카드', awayEmblem: 'wc', awayScore: '3', leftBtn: '경기 영상', rightBtn: '경기 기록'},
   {round: '1 ROUND', homeEmblem: 'ka', home: '대한항공', time: '2025.10.23(목) 19:00', place: '인천계양체육관', homeScore: '3', away: '한국전력', awayEmblem: 'kc', awayEmblem: 'kc', awayScore: '1', leftBtn: '경기 영상', rightBtn: '경기 기록'},
@@ -195,8 +195,8 @@ photoSecUlLiA.forEach((el, idx)=>{
 //player section
 const playerSliderUl = document.querySelector('section.player-sec .slider-inner ul');
 const playerSliderUlLi = document.querySelectorAll('section.player-sec .slider-inner ul li');
-const leftArrow = document.querySelector('section.player-sec span.left-arrow');
-const rightArrow = document.querySelector('section.player-sec span.right-arrow');
+const leftArrow = document.querySelector('section.player-sec button.left-arrow');
+const rightArrow = document.querySelector('section.player-sec button.right-arrow');
 playerSliderUl.style.width = playerSliderUlLi[0].offsetWidth*playerSliderUlLi.length + 'px';
 const playerSliderGap = playerSliderUlLi[0].offsetWidth;
 let playerSliderNum = 0;
@@ -226,8 +226,8 @@ rightArrow.addEventListener('click', function(e){
 const snsSllider = document.querySelector('.sns-slider');
 const snsSlliderUl = document.querySelector('.sns-slider ul');
 const snsSlliderUlLi = document.querySelectorAll('.sns-slider ul li');
-const snsRightArrow = document.querySelector('.sns-slider span.right-arrow');
-const snsLeftArrow = document.querySelector('.sns-slider span.left-arrow');
+const snsRightArrow = document.querySelector('.sns-slider button.right-arrow');
+const snsLeftArrow = document.querySelector('.sns-slider button.left-arrow');
 snsSlliderUl.style.widht = snsSlliderUlLi[1].offsetWidth * snsSlliderUlLi.length + 'px';
 const snsSliderGap = snsSlliderUlLi[1].offsetLeft - snsSlliderUlLi[0].offsetLeft;
 let snsCurrentNum = -1;

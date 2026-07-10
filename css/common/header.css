@@ -136,15 +136,17 @@ header .inner .goto ul span.bar{
   border: 1px solid var(--gray3-color);
   border-radius: 16px;
 }
-span.close-btn{
+button.close-btn{
   display: block;
   width: 48px;
   height: 48px;
   margin: 0 auto;
   background: url('../../img/close-btn.svg') no-repeat center top / auto;
   cursor: pointer;
+  border: 0;
+  padding: 0;
 }
-span.close-btn:hover{
+button.close-btn:hover{
   background: url('../../img/close-btn.svg') no-repeat center -48px / auto;
 }
 .login-popup .login-inner form{
