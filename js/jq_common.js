@@ -2,10 +2,12 @@ $('#header-include').load("html/header.html", function(){
   //login
   $('header .goto li.goto-login a').click(function(){
     $('.login-popup').addClass('active');
+    $('.login-popup').prop('inert', false);
     return false;
   });
   $('.login-popup button.close-btn').click(function(){
     $('.login-popup').removeClass('active');
+    $('.login-popup').prop('inert', true);
   });
   $('.login-popup ul.options li.login-state').click(function(){
     $(this).toggleClass('active');
@@ -29,10 +31,12 @@ $('#header-include').load("html/header.html", function(){
   //join
   $('header .goto li.goto-join a').click(function(){
     $('.join-popup').addClass('active');
+    $('.join-popup').prop('inert', false);
     return false;
   });
   $('.join-popup button.close-btn').click(function(){
     $('.join-popup').removeClass('active');
+    $('.join-popup').prop('inert', true);
   });
   $('span.select-box select').click(function(){
     $('span.select-box select').toggleClass('active');

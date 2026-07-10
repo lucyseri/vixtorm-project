@@ -8,8 +8,12 @@ const controllerUlLiA = document.querySelectorAll('ul.banner-control li a');
 mainBanner.style.height = galleryUlLi[0].offsetHeight+'px';
 let currentNum = -1;
 function fadeGalleryFn(num){
-  for(let i=0; i<galleryUlLi.length; i++){galleryUlLi[i].classList.remove('on');};
+  for(let i=0; i<galleryUlLi.length; i++){
+    galleryUlLi[i].classList.remove('on');
+    galleryUlLi[i].inert = true;
+  };
   galleryUlLi[num].classList.add('on');
+  galleryUlLi[num].inert = false;
 }
 function fadeGalleryTimer(){
   currentNum++;
@@ -74,16 +78,6 @@ nextBtn.addEventListener('mouseout', galleryControllerFn);
 //game section slider
 const gameCarouselWidth = document.querySelector('.game-sec .carousel').offsetWidth;
 const gameCarouselUl = document.querySelector('.carousel-inner ul');
-const gameCarouselLi = document.querySelectorAll('.carousel-inner ul li');
-const spanRound = document.querySelectorAll('.game-sec span.round');
-const spanTime = document.querySelectorAll('.game-sec span.time');
-const spanPlace = document.querySelectorAll('.game-sec span.place');
-const spanHomeName = document.querySelectorAll('.game-sec .home span.name');
-const spanHomeScore = document.querySelectorAll('.game-sec .home span.score');
-const spanAwayName = document.querySelectorAll('.game-sec .away span.name');
-const spanAwayScore = document.querySelectorAll('.game-sec .away span.score');
-const gameLeftBtn = document.querySelectorAll('.game-sec a.left-btn');
-const gameRightBtn = document.querySelectorAll('.game-sec a.right-btn');
 const gameCarouselArrowRight = document.querySelector('.carousel button.right-arrow');
 const gameCarouselArrowLeft = document.querySelector('.carousel button.left-arrow');
 const gameSchedule = [
@@ -126,33 +120,6 @@ const gameSchedule = [
 ];
 gameCarouselUl.style.width = (gameSchedule.length*290+40*(gameSchedule-1)) + 'px';
 let carouselLiArray = '';
-for(let i=0; i<gameSchedule.length; i++){
-  carouselLiArray+=
-  `<li>
-      <span class="round">${gameSchedule[i].round}</span>
-      <span class="time">${gameSchedule[i].time}</span>
-      <span class="place">${gameSchedule[i].place}</span>
-      <div class="team">
-        <div class="home">
-          <span class="emblem ${gameSchedule[i].homeEmblem}"></span>
-          <span class="name">${gameSchedule[i].home}</span>
-          <span class="score">${gameSchedule[i].homeScore}</span>
-        </div>
-        <span class="vs">vs</span>
-        <div class="away">
-          <span class="emblem ${gameSchedule[i].awayEmblem}"></span>
-          <span class="name">${gameSchedule[i].away}</span>
-          <span class="score">${gameSchedule[i].awayScore}</span>
-        </div>
-      </div>
-      <div class="btn">
-        <a href="#" class="left-btn">${gameSchedule[i].leftBtn}</a>
-        <span class="bar"></span>
-        <a href="#" class="right-btn">${gameSchedule[i].rightBtn}</a>
-      </div>
-    </li>`
-  gameCarouselUl.innerHTML = carouselLiArray;
-};
 let yesterday =new Date();
 let today =  new Date();
 let yesterdayIndex ='';
@@ -166,15 +133,58 @@ function setGameDayFn(){
   gameCarouselUl.style.left = -gameCurrentNum*carouselGap+ 'px';
 };
 setGameDayFn();
+for(let i = 0; i<gameSchedule.length;i++){
+  carouselLiArray+=
+    `<li>
+        <span class="round">${gameSchedule[i].round}</span>
+        <span class="time">${gameSchedule[i].time}</span>
+        <span class="place">${gameSchedule[i].place}</span>
+        <div class="team">
+          <div class="home">
+            <span class="emblem ${gameSchedule[i].homeEmblem}"></span>
+            <span class="name">${gameSchedule[i].home}</span>
+            <span class="score">${gameSchedule[i].homeScore}</span>
+          </div>
+          <span class="vs">vs</span>
+          <div class="away">
+            <span class="emblem ${gameSchedule[i].awayEmblem}"></span>
+            <span class="name">${gameSchedule[i].away}</span>
+            <span class="score">${gameSchedule[i].awayScore}</span>
+          </div>
+        </div>
+        <div class="btn">
+          <a href="#" class="left-btn">${gameSchedule[i].leftBtn}</a>
+          <span class="bar"></span>
+          <a href="#" class="right-btn">${gameSchedule[i].rightBtn}</a>
+        </div>
+      </li>`;
+  gameCarouselUl.innerHTML = carouselLiArray;
+}
+function btnInertFn(num){
+  const gameLeftBtn = document.querySelectorAll('.game-sec a.left-btn');
+  const gameRightBtn = document.querySelectorAll('.game-sec a.right-btn');
+  for(let i = 0; i<gameSchedule.length; i++){
+    if(i<num*4 || i>num*4+3){
+      gameLeftBtn[i].setAttribute('tabindex', "-1");
+      gameRightBtn[i].setAttribute('tabindex', "-1");
+    }else{
+      gameLeftBtn[i].setAttribute('tabindex', '0');
+      gameRightBtn[i].setAttribute('tabindex', '0');
+    }
+  }
+}
+btnInertFn(gameCurrentNum);
 gameCarouselArrowLeft.addEventListener('click', function(){
   if(gameCurrentNum>=gameSchedule.length/4-1) gameCurrentNum = -1;
   gameCurrentNum++;
   gameCarouselUl.style.left = -gameCurrentNum*carouselGap+ 'px';
+  btnInertFn(gameCurrentNum);
 }); 
 gameCarouselArrowRight.addEventListener('click', function(){
   if(gameCurrentNum<=0) gameCurrentNum = gameSchedule.length/4;
   gameCurrentNum--;
   gameCarouselUl.style.left = -gameCurrentNum*carouselGap+ 'px';
+  btnInertFn(gameCurrentNum);
 });
 //photo gallery
 const photoSec = document.querySelector('section.gallery-sec');
@@ -226,17 +236,30 @@ rightArrow.addEventListener('click', function(e){
 const snsSllider = document.querySelector('.sns-slider');
 const snsSlliderUl = document.querySelector('.sns-slider ul');
 const snsSlliderUlLi = document.querySelectorAll('.sns-slider ul li');
+const snsSlliderUlLiA = document.querySelectorAll('.sns-slider ul li a');
 const snsRightArrow = document.querySelector('.sns-slider button.right-arrow');
 const snsLeftArrow = document.querySelector('.sns-slider button.left-arrow');
 snsSlliderUl.style.widht = snsSlliderUlLi[1].offsetWidth * snsSlliderUlLi.length + 'px';
 const snsSliderGap = snsSlliderUlLi[1].offsetLeft - snsSlliderUlLi[0].offsetLeft;
 let snsCurrentNum = -1;
+
+function snsItemInertFn(){
+  for(let i = 0; i < snsSlliderUlLi.length; i++){
+    if(i<snsCurrentNum || i>snsCurrentNum+2){
+      snsSlliderUlLiA[i].setAttribute('tabindex', '-1');
+    }else{
+      snsSlliderUlLiA[i].setAttribute('tabindex', '0');
+    }
+  }
+};
+snsItemInertFn();
 function snsSliderTimer(){
   if(snsCurrentNum>=snsSlliderUlLi.length-3) snsCurrentNum=-1;
   snsCurrentNum++;
   snsSlliderUl.style.left = -snsCurrentNum*snsSliderGap + 'px';
   snsLeftArrow.style.opacity='1';
   snsRightArrow.style.opacity='1';
+  snsItemInertFn();
 };
 let sliderInt = setInterval(snsSliderTimer, 3000);
 (()=>{snsSliderTimer()})();
@@ -259,6 +282,7 @@ snsRightArrow.addEventListener('click', function(e){
     snsLeftArrow.style.opacity='1';
   }
   snsSlliderUl.style.left = -snsCurrentNum*snsSliderGap + 'px';
+  snsItemInertFn();
 });
 snsLeftArrow.addEventListener('mouseover', snsBtnFn);
 snsLeftArrow.addEventListener('mouseout', snsBtnFn);
@@ -272,4 +296,5 @@ snsLeftArrow.addEventListener('click', function(e){
     snsRightArrow.style.opacity='1';
   }
   snsSlliderUl.style.left = -snsCurrentNum*snsSliderGap + 'px';
+  snsItemInertFn();
 });
